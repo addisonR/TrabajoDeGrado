@@ -1,0 +1,37 @@
+import com.jtattoo.plaf.texture.TextureLookAndFeel;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+
+/**
+ *
+ * @author ALmerlis
+ */
+public class SistemaVeterinario {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        TextureLookAndFeel xoi = new TextureLookAndFeel();
+       
+        try{
+                JFrame.setDefaultLookAndFeelDecorated(true);
+                JDialog.setDefaultLookAndFeelDecorated(true);
+                UIManager.setLookAndFeel(xoi);
+            }catch(Exception ex){
+                JOptionPane.showMessageDialog(null, ex);
+            }
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            
+            @Override
+            public void run() {
+             Login y = new Login();
+              y.setVisible(true);   
+            }
+        });
+  
+           }
+    
+}
